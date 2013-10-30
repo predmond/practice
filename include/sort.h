@@ -8,6 +8,16 @@
 #include <cassert>
 #include "heap.h"
 
+void bubblesort(std::vector<int>::iterator begin,
+                std::vector<int>::iterator end) {
+  while (begin != --end) {
+    for (std::vector<int>::iterator I = begin; I != end; ++I) {
+      std::vector<int>::iterator I1 = I + 1;
+      if (*I > *I1) std::swap(*I, *I1);
+    }
+  }
+}
+
 void mergesort(std::vector<int>::iterator begin,
                std::vector<int>::iterator end) {
   unsigned N = std::distance(begin, end);

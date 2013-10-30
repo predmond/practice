@@ -33,6 +33,7 @@ int main(int argc, char *argv[]) {
 #endif
 
   print(A.begin(), A.end(), "Input");
-  heapsort(A.begin(), A.end());
+//  heapsort(A.begin(), A.end());
+  bubblesort(A.begin(), A.end());
   print(A.begin(), A.end(), "Output");
 }
