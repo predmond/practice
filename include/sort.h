@@ -8,10 +8,18 @@
 #include <cassert>
 #include "heap.h"
 
+void selectionsort(std::vector<int>::iterator begin,
+                   std::vector<int>::iterator end) {
+  for (auto I = begin; I != end; ++I) {
+    auto M = std::min_element(I, end);
+    if (M != I) std::swap(*I, *M);
+  }
+}
+
 void bubblesort(std::vector<int>::iterator begin,
                 std::vector<int>::iterator end) {
   while (begin != --end) {
-    for (std::vector<int>::iterator I = begin; I != end; ++I) {
+    for (auto I = begin; I != end; ++I) {
       std::vector<int>::iterator I1 = I + 1;
       if (*I > *I1) std::swap(*I, *I1);
     }
@@ -42,7 +50,7 @@ void mergesort(std::vector<int>::iterator begin,
 void heapsort(std::vector<int>::iterator begin,
               std::vector<int>::iterator end) {
   heap h;
-  for (std::vector<int>::iterator I = begin; I != end; ++I)
+  for (auto I = begin; I != end; ++I)
     h.insert(*I);
   h.dump();
   while (!h.empty()) {

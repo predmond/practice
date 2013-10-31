@@ -34,6 +34,6 @@ int main(int argc, char *argv[]) {
 
   print(A.begin(), A.end(), "Input");
 //  heapsort(A.begin(), A.end());
-  bubblesort(A.begin(), A.end());
+  selectionsort(A.begin(), A.end());
   print(A.begin(), A.end(), "Output");
 }
